@@ -1,0 +1,37 @@
+<%@ page import="entity.Manufacturer" %><%--
+  Created by IntelliJ IDEA.
+  User: User
+  Date: 4/7/2023
+  Time: 12:16 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<%
+    Manufacturer selManufacturer= (Manufacturer) session.getAttribute("selManufacturer");
+%>
+<form action="Controller">
+    <input type="hidden" name="action" value="update_manufacturer">
+    <a>
+        Manufacturer ID:<input name="manufacturerId" readonly="true"
+    value="<%=selManufacturer.getManId()%>">
+    </a>
+    Enter Manufacturer Name:<input name="manufacturerName"
+        maxlength="50"value="<%=selManufacturer.getManName()%>"><br>
+    Enter ManuContacName: <input name="manuContactName"
+        maxlength="50" value="<%=selManufacturer.getManContactName()%>">
+    Enter ManuContacEmail: <input name="manuContactEmail"
+       maxlength="50" value="<%=selManufacturer.getManContactEmail()%>">
+    Enter ManuContacPhone: <input name="manuContactPhone"
+        maxlength="50" value="<%=selManufacturer.getManContactPhone()%>">
+    Enter ManuWebsite: <input name="manuWebsite"
+       maxlength="50" value="<%=selManufacturer.getManWebsite()%>">
+
+    <input type="submit"value="Update">
+</form>
+</body>
+</html>
